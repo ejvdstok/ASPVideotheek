@@ -1,0 +1,17 @@
+﻿@model Film
+@{
+    ViewData["Title"] = "Verwijderen";
+}
+
+<h1>Verwijder gehuurde film</h1>
+
+<p>Ben je zeker dat je "@Model.Titel" niet wil huren?</p>
+
+<form asp-action="Verwijderen">
+    <input type="submit" value="Verwijderen" class="btn btn-danger" /> |
+    <a class="btn btn-danger" asp-area=""
+       asp-controller="Verhuringen" asp-action="Mandje">
+        Nee
+    </a>
+</form>
+

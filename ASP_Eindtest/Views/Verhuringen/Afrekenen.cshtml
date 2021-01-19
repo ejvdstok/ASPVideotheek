@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Film>
+@{
+    ViewData["Title"] = "Afrekenen";
+}
+
+<h1>Afrekenen</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Titel
+            </th>
+            <th>
+                Prijs
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prijs)
+                </td>>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>
+                Totaal
+            </th>
+            <th>
+                 @(((decimal)ViewBag.totaal).ToString("C2"))
+            </th>
+        </tr>
+    </tfoot>
+</table>
+
+<p>wordt gefactureerd aan:</p>
+<p>@ViewBag.klant.Voornaam @ViewBag.klant.Naam</p>
+<p></p>
+<p>@ViewBag.klant.StraatNr</p>
+<p></p>
+<p>@ViewBag.klant.PostCode @ViewBag.klant.Gemeente</p>
